@@ -1,0 +1,19 @@
+In order to install OpenCV you need to download it from 
+
+sourceforge.net/projects/opencvlibrary 
+
+Then on the project you need to change the following settings:
+
+Additional Include Directories: 	
+
+"C:\Program Files\OpenCV\cxcore\include";
+"C:\Program Files\OpenCV\cv\include";
+"C:\Program Files\OpenCV\cvaux\include";
+"C:\Program Files\OpenCV\otherlibs\highgui";
+"C:\Program Files\OpenCV\otherlibs\cvcam\include"
+
+Additional Library Directories: 	
+"C:\Program Files\OpenCV\lib"
+
+Additional Dependencies (libraries): 	
+cv.lib cxcore.lib highgui.lib
