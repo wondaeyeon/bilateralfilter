@@ -16,18 +16,15 @@ int getValue(IplImage * image,int i,int j)
 		return pixelValue;
 	}
 
-void BilateralFilter::setEdgeDetectedImage(IplImage * edimage)
-{
-	this->edimage= edimage;
-}
+
 BilateralFilter::BilateralFilter(IplImage *image,double sigmaD, double sigmaR){
 
-		contrastParameter = 100;
-		this->mouseInteraction = mouseInteraction;
+		
+		
 	    this->image = cvCloneImage(image);
         int sigmaMax = max(sigmaD, sigmaR);
         this->kernelRadius = ceil((double)2 * sigmaMax);
-		this->strokeWidth = strokeWidth;
+
         
         double twoSigmaRSquared = 2 * sigmaR * sigmaR;
 
@@ -52,13 +49,10 @@ BilateralFilter::BilateralFilter(IplImage *image,double sigmaD, double sigmaR){
 			gaussSimilarity[i] = exp((double)-((i) / twoSigmaRSquared));
 		}
 
-		//rimage = cvCreateImage(cvGetSize(this->image),IPL_DEPTH_8U,3);
-		//cvZero(rimage);
 		rimage = cvCloneImage(image);
 }
 IplImage * BilateralFilter::runFilter(){
 
-	 
             
 	 for(int i=0;i<rimage->height;i++){
 		for (int j=0;j<rimage->width;j++){
@@ -77,17 +71,6 @@ double BilateralFilter::getSpatialWeight(int m, int n,int i,int j){
 }
 
 
-
-void BilateralFilter::applyAround(int x, int y){
-	//int strokeWidth = 15;
-	//cvSet2D(image,y,x,blueColor);
-	for(int i=y-strokeWidth; i<y+this->strokeWidth;i++){
-		for(int j=x-strokeWidth; j<x+this->strokeWidth;j++){
-			this->apply(i,j);
-			//cvSet2D(image,i,j,blueColor);
-		}
-	}
-}
 void BilateralFilter::apply(int i, int j) {// ~i=y j=x
 
 	if(i>0 && j>0 && i<image->height && j< image->width){
