@@ -4,7 +4,8 @@ sourceforge.net/projects/opencvlibrary
 
 Then on the project you need to change the following settings:
 
-Additional Include Directories: 	
+On properties project-> Configuration properties do the following : 
+C/C++ -> General-> Additional Include Directories enter: 	
 
 "C:\Program Files\OpenCV\cxcore\include";
 "C:\Program Files\OpenCV\cv\include";
@@ -12,8 +13,8 @@ Additional Include Directories:
 "C:\Program Files\OpenCV\otherlibs\highgui";
 "C:\Program Files\OpenCV\otherlibs\cvcam\include"
 
-Additional Library Directories: 	
+under Linker->Additional Library Directories enter: 	
 "C:\Program Files\OpenCV\lib"
 
-Additional Dependencies (libraries): 	
+Under Linker->Input->Additional Dependencies (libraries) enter: 	
 cv.lib cxcore.lib highgui.lib
